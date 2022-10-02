@@ -29,6 +29,7 @@
 		</div> -->
 
         <div id="slidePlot">
+                <p>test</p>
         <?php
             if(file_exists("status.html") && filesize("status.html") > 0){
                 $contents = file_get_contents("status.html");          
