@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
- 
         <title>EnGauge</title>
         <style>
 			* {
@@ -119,11 +118,28 @@
             </form>
         </div>
         <div class ="main">
-		<input type="range" min="0" max="100" value="50" id="slider">
+		<input name="sliderval" type="range" min="0" max="100" value="50" id="slider">
+        <input name="submitval" type="submit" id="submitval" value="Send" />
 		<div id="selector">
 			<div class="SelectBtn"></div>
 			<div id="SelectValue"></div>
 		</div>
+
+        <div id="slidePlot">
+        <?php
+            if(file_exists("status.html") && filesize("status.html") > 0){
+                $contents = file_get_contents("status.html");          
+                echo $contents;
+            }
+            ?>
+        </div>
+
+            <!-- script to take in status bar input -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+        </script>
+
 		<div id="progressBar"></div>
 		<script>
 			var slider = document.getElementById("slider");
@@ -137,6 +153,35 @@
 				SelectValue.innerHTML = this.value;
 				selector.style.left = this.value + "%";
 				progressBar.style.width = (-this.value) + "%";
+
+                // jQuery Document
+            $(document).ready(function () {
+                $("#submitval").click(function () {
+                    var sliderval = $("#sliderval").val();
+                    $.post("slide.php", { slideval: slider.value });
+                    $("#usermsg").val("");
+                    return false;
+                });
+ 
+                function loadSlide() {
+                    var oldscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height before the request
+ 
+                    $.ajax({
+                        url: "status.html",
+                        cache: false,
+                        success: function (html) {
+                            $("#slidePlot").html(html); //Insert slideplot log into the #slideplot div
+ 
+                            //Auto-scroll           
+                            var newscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height after the request
+                            if(newscrollHeight > oldscrollHeight){
+                                $("#slidePlot").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                            }   
+                        }
+                    });
+                }
+
+                setInterval (loadSlide, 2500);
 			}
 		</script>
 	</div>
