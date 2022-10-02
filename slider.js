@@ -35,6 +35,6 @@ import { getDatabase, ref, set } from "firebase/database";
 
 function writeUserData() {
   firebase.database().ref("User").set({
-    value:document.getElementById("value").value
+    value: document.getElementById("value").value
   })
 }

@@ -41,11 +41,12 @@
         </div>
         <div id="slider">
                 <input type="range" min="0" max="100" value="50" id="bar">
+                <input type="text" placeholder="age" id="value">
                 <p>Value:<span id="value"></span></p>
             </div>             
             <div id="Submit">
                 <!-- <input type="submit" value="Submit" id="icon"> -->
-                <button onclick="writeData()">Submit</button>
+                <!-- <button onclick="writeData()">Submit</button> -->
             </div>
 		<script src="slider.js"></script>
 	</div>
