@@ -20,7 +20,7 @@ def plot(data):
     for i in range(num_vars):
         plt.plot(x,ys[i])
     #plt.legend()
-    #plt.savefig("lines.png")
+    plt.savefig("lines.png")
     plt.show()
 
 result = sys.argv[1]
