@@ -18,7 +18,7 @@
         }
         ?>
         <div class ="main">
-		<input name="sliderval" type="range" min="0" max="100" value="50" id="slider">
+		<input name="sliderval" type="range" min="0" max="100" value="50" id="sliderval">
         </div>
         <!-- <div>
             <input name="submitval" type="submit" id="submitval" value="Send" />
@@ -47,9 +47,9 @@
                 // jQuery Document
             $(document).ready(function () {
                 $("#sliderval").click(function () {
-                SelectValue.innerHTML = slider.value;
-                //     var inputslide = $("#sliderval").val();
-                    $.post("slider.php", { slideval: SelectValue });
+                // SelectValue.innerHTML = slider.value;
+                    var inputslide = $("#sliderval").val();
+                    $.post("slider.php", { slideval: inputslide });
                     $("#sliderval").val("");
                     return false;
                 });
