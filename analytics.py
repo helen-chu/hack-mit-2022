@@ -18,7 +18,7 @@ def plot(data):
     ys_raw = list(data.values())
     ys = np.transpose(np.array(ys_raw))
     num_vars = len(ys)
-    plt.figure(figsize=(4,3))
+    plt.figure(figsize=(6,4))
     for i in range(num_vars):
         plt.plot(x,ys[i])
 
