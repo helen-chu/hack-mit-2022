@@ -2,7 +2,7 @@
 <html>
 <body>
 <?php 
-$output=shell_exec("python analytics.py 'try_var'");
+$output=shell_exec("python test.py 'try_var'");
 echo "$output!";
 ?>
 </body>
