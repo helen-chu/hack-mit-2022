@@ -119,7 +119,7 @@
         </div>
         <div class ="main">
 		<input name="sliderval" type="range" min="0" max="100" value="50" id="slider">
-        <input name="submitval" type="submit" id="submitval" value="Send" />
+        <!-- <input name="submitval" type="submit" id="submitval" value="Send" /> -->
 		<div id="selector">
 			<div class="SelectBtn"></div>
 			<div id="SelectValue"></div>
