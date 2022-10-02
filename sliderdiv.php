@@ -9,7 +9,7 @@
     <body>
         <?php
         session_start();
-        file_put_contents("log.html", '');
+        file_put_contents("log.html", 'testtttttt');
 
         if(isset($_GET['logout'])){    
         
