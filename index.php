@@ -87,16 +87,16 @@
     </head>
     
     <body>
-    <?php
-    session_start();
-    file_put_contents("log.html", '');
+        <?php
+        session_start();
+        file_put_contents("log.html", '');
 
-    if(isset($_GET['logout'])){    
-     
-        session_destroy();
-        header("Location: index.php"); //Redirect the user
-    }
-    ?>
+        if(isset($_GET['logout'])){    
+        
+            session_destroy();
+            header("Location: index.php"); //Redirect the user
+        }
+        ?>
         <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome</b></p>
@@ -153,6 +153,7 @@
 				SelectValue.innerHTML = this.value;
 				selector.style.left = this.value + "%";
 				progressBar.style.width = (-this.value) + "%";
+            }
 
                 // jQuery Document
             $(document).ready(function () {
@@ -163,29 +164,28 @@
                     return false;
                 });
  
-                function loadSlide() {
-                    var oldscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height before the request
+            //     function loadSlide() {
+            //         var oldscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height before the request
  
-                    $.ajax({
-                        url: "status.html",
-                        cache: false,
-                        success: function (html) {
-                            $("#slidePlot").html(html); //Insert slideplot log into the #slideplot div
+            //         $.ajax({
+            //             url: "status.html",
+            //             cache: false,
+            //             success: function (html) {
+            //                 $("#slidePlot").html(html); //Insert slideplot log into the #slideplot div
  
-                            //Auto-scroll           
-                            var newscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height after the request
-                            if(newscrollHeight > oldscrollHeight){
-                                $("#slidePlot").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
-                            }   
-                        }
-                    });
-                }
+            //                 //Auto-scroll           
+            //                 var newscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height after the request
+            //                 if(newscrollHeight > oldscrollHeight){
+            //                     $("#slidePlot").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+            //                 }   
+            //             }
+            //         });
+            //     }
 
-                setInterval (loadSlide, 2500);
-			}
+            //     setInterval (loadSlide, 2500);
+			// }
 		</script>
-	</div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
