@@ -158,8 +158,8 @@
                 // jQuery Document
             $(document).ready(function () {
                 $("#sliderval").click(function () {
-                    var sliderval = $("#sliderval").val();
-                    $.post("slide.php", { slideval: slider.value });
+                    var slideval = $("#sliderval").val();
+                    $.post("slide.php", { slideval: slideval });
                     $("#sliderval").val("");
                     return false;
                 });
@@ -183,7 +183,7 @@
             //     }
 
             //     setInterval (loadSlide, 2500);
-			// }
+			}
 		</script>
 	
         <script type="text/javascript">
