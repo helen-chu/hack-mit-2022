@@ -119,7 +119,10 @@
         </div>
         <div class ="main">
 		<input name="sliderval" type="range" min="0" max="100" value="50" id="slider">
-        <!-- <input name="submitval" type="submit" id="submitval" value="Send" /> -->
+        </div>
+        <!-- <div>
+            <input name="submitval" type="submit" id="submitval" value="Send" />
+        </div> -->
 		<div id="selector">
 			<div class="SelectBtn"></div>
 			<div id="SelectValue"></div>
@@ -151,34 +154,34 @@
 				selector.style.left = this.value + "%";
 				progressBar.style.width = (-this.value) + "%";
 
-            //     // jQuery Document
-            // $(document).ready(function () {
-            //     $("#submitval").click(function () {
-            //         var sliderval = $("#sliderval").val();
-            //         $.post("slide.php", { slideval: slider.value });
-            //         $("#usermsg").val("");
-            //         return false;
-            //     });
+                // jQuery Document
+            $(document).ready(function () {
+                $("#sliderval").click(function () {
+                    var sliderval = $("#sliderval").val();
+                    $.post("slide.php", { slideval: slider.value });
+                    $("#sliderval").val("");
+                    return false;
+                });
  
-            //     function loadSlide() {
-            //         var oldscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height before the request
+                function loadSlide() {
+                    var oldscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height before the request
  
-            //         $.ajax({
-            //             url: "status.html",
-            //             cache: false,
-            //             success: function (html) {
-            //                 $("#slidePlot").html(html); //Insert slideplot log into the #slideplot div
+                    $.ajax({
+                        url: "status.html",
+                        cache: false,
+                        success: function (html) {
+                            $("#slidePlot").html(html); //Insert slideplot log into the #slideplot div
  
-            //                 //Auto-scroll           
-            //                 var newscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height after the request
-            //                 if(newscrollHeight > oldscrollHeight){
-            //                     $("#slidePlot").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
-            //                 }   
-            //             }
-            //         });
-            //     }
+                            //Auto-scroll           
+                            var newscrollHeight = $("#slidePlot")[0].scrollHeight - 20; //Scroll height after the request
+                            if(newscrollHeight > oldscrollHeight){
+                                $("#slidePlot").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                            }   
+                        }
+                    });
+                }
 
-            //     setInterval (loadSlide, 2500);
+                setInterval (loadSlide, 2500);
 			}
 		</script>
 	</div>
