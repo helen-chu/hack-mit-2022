@@ -3,18 +3,27 @@
     <head>
         <meta charset="utf-8" />
  
-        <title>Tuts+ Chat Application</title>
-        <meta name="description" content="Tuts+ Chat Application" />
+        <title>EnGauge</title>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
     <?php
     session_start();
+
+    if(isset($_GET['logout'])){    
+     
+        //Simple exit message
+        $logout_message = "<div class='msgln'><span class='left-info'>User <b class='user-name-left'>". $_SESSION['name'] ."</b> has left the chat session.</span><br></div>";
+        file_put_contents("log.html", $logout_message, FILE_APPEND | LOCK_EX);
+         
+        session_destroy();
+        header("Location: index.php"); //Redirect the user
+    }
     ?>
         <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome</b></p>
-                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+                <p class="logout"><a id="exit" href="#">New Class</a></p>
             </div>
  
             <div id="chatbox">
