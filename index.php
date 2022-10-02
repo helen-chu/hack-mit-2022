@@ -4,9 +4,7 @@
         <meta charset="utf-8" />
  
         <title>EnGauge</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <style>
+        <style>
 			* {
 				margin: 0;
 				padding: 0;
@@ -86,6 +84,9 @@
 				left:100%;
 			}
 		</style>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
     <body>
     <?php
     session_start();
