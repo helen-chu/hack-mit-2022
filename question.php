@@ -29,9 +29,11 @@ $time = 1.5;
 
 $output=shell_exec("python analytics.py "  .$time);
 echo "happy hackathon!";
+echo "<img src=$output"
 ?>
 
-<img src="<?php echo $output; ?>"/>
+<!-- <img src="<?php echo $output; ?>"/> -->
+
 
 </body>
 </html>
