@@ -9,6 +9,8 @@ try_data = {
     5:[5,2,1]
 }
 
+time_next = sys.argv[1]
+try_data[time_next] = [3,2,3]
 
 def plot(data):
     x = data.keys()
@@ -18,7 +20,7 @@ def plot(data):
     for i in range(num_vars):
         plt.plot(x,ys[i])
     #plt.legend()
-    plt.savefig("lines.png")
+    #plt.savefig("lines.png")
     plt.show()
 
 result = sys.argv[1]

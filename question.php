@@ -15,6 +15,7 @@
     <p>Click the "Submit" button and the form-data will be sent to a page on the 
 server called "action_page.php".</p>
 $output=shell_exec("python analytics.py "  .$txt);
+$output=shell_exec("python analytics.py try_var");
 -->
 
 <form action="welcome.php" method="post">
@@ -24,13 +25,13 @@ Question: <input type="text" name="name"><br>
 
 
 <?php 
-$txt = "variable here";
+$time = 1.5;
 
-$output=shell_exec("python analytics.py try_var");
-echo "$txt!";
+$output=shell_exec("python analytics.py "  .$time);
+echo "happy hackathon!";
 ?>
 
-<img src='lines.png'/>
+<img src=$output/>
 
 </body>
 </html>
