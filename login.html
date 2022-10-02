@@ -121,21 +121,23 @@ body {
 <img src="login-img/logowelcome.png" alt="Logo and welcome" width="235" height="247" class="center"> 
 
 
-<form action="/" class="decor">
+<form action="" id="login" class="decor">
         
     <div class="form-left-decoration"></div>
     <div class="form-right-decoration"></div>
     <div class="circle"></div>
     <div class="form-inner">
-      <input type="email" placeholder="Email">
-      <input type="text" placeholder="Course Code">
+      <input type="email" id="emailid" placeholder="Email" />
+      <input type="text" id="courseid" placeholder="Course Code" />
 
-      <button type="submit" href="welcome.php">I am a Instructor.</button>
+      <button type="submit" >I am a Instructor.</button>
       <button type="submit" href="index.php">I am a Student.</button>
+      <button type="button" onclick="location.href='index.php'">Go to home page. </button>
     </div>
   </form>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./mail.js"></script>
 </body>
 </html>
 
