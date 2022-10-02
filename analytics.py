@@ -18,6 +18,7 @@ def plot(data):
     ys_raw = list(data.values())
     ys = np.transpose(np.array(ys_raw))
     num_vars = len(ys)
+    plt.figure(figsize=(4,3))
     for i in range(num_vars):
         plt.plot(x,ys[i])
 
@@ -33,7 +34,7 @@ def plot(data):
 
     #     # Plot the new data points
     #     plt.plot(x_new, y_new)
-
+    
     plt.xlabel("time(s)")
     plt.ylabel("engagement level")
     plt.savefig("lines.png")

@@ -23,6 +23,8 @@ def plot(data):
     plt.savefig("lines.png")
     plt.show()
 
+    plt.set_size_inches(18.5, 10.5)
+
 # result = sys.argv[1]
 print("lines.png")
 
