@@ -2,6 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EnGauge</title>
         <link href="sliderformat.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css" />
@@ -40,16 +42,36 @@
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
-        <div id="slider">
-                <input type="range" min="0" max="100" value="50" id="bar">
-                <p>Value:<span id="value"></span></p>
-            </div>             
-            <div id="Submit">
-                <input type="submit" value="Submit" id="icon">
+        <div class="container">
+        <form action="" id="contactForm">
+            <div class="alert">Your message sent</div>
+
+            <div class="inputBox">
+                <div id="slider">
+                    <input type="range" min="0" max="100" value="50" id="name">
+                    <p>Value:<span id="bar"></span></p>
+                </div>  
+                <!-- <input type="text" id="name" placeholder="Your name...." /> -->
             </div>
-		<script src="slider.js"></script>
-	</div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <!-- <div class="inputBox">
+                <input type="email" id="emailid" placeholder="Your Email....." />
+            </div>
+
+            <div class="inputBox">
+                <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+            </div> -->
+
+            <div class="inputBox">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="firebase_script.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
