@@ -159,7 +159,7 @@
             $(document).ready(function () {
                 $("#sliderval").click(function () {
                     var slideval = $("#sliderval").val();
-                    $.post("slide.php", { slideval: slideval });
+                    $.post("slider.php", { slideval: slideval });
                     $("#sliderval").val("");
                     return false;
                 });
