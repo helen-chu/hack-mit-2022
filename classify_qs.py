@@ -25,6 +25,15 @@ try_qs_labels = {
     "bigrams": [2,4]
 }
 
+try_ans = [
+    "Yes, always same category",
+    "START should not be considered as a unigram here",
+    "Yes, we have to",
+    "Yes, that is correct",
+    "You need do reimplement your gram classifying algorithm",
+    "You can just submit it like this"
+]
+
 def train_labels(qs,qs_labels):
     split_qs = []
     for q in qs:
@@ -44,7 +53,7 @@ def train_labels(qs,qs_labels):
     for label in qs_labels.keys():
         words = []
         qs_indices = qs_labels[label]
-        print(qs_indices)
+        #print(qs_indices)
         for i in qs_indices:
             for word in split_qs[i]:
                 words.append(word)
@@ -59,7 +68,7 @@ def train_labels(qs,qs_labels):
         trained_labels[label] = Counter(words)
     return trained_labels
 
-def find_label(q,trained_labels):
+def find_labels(q,trained_labels):
     q = q.lower()
     q.replace('; ', ' ')
     q.replace(', ', ' ')
@@ -90,4 +99,27 @@ def find_label(q,trained_labels):
         label_freq_sorted[label] = label_freq[label]
     return label_freq_sorted
 
-
+def ask_similar(q,qs,qs_labels,ans,threshold):
+    trained_labels = train_labels(qs,qs_labels)
+    labels_freq = find_labels(q,trained_labels)
+    q = q.lower()
+    q.replace('; ', ' ')
+    q.replace(', ', ' ')
+    q.replace('_ ', ' ')
+    q.replace('( ', ' ')
+    q.replace(') ', ' ')
+    q.replace('? ', ' ')
+    q.replace('   ', ' ')
+    q.replace('  ', ' ')
+    split_q = q.split(' ')
+    q_length = len(split_q)
+    for label in labels_freq:
+        ratio = labels_freq[label]/q_length
+        assert(ratio<=1)
+        if ratio>threshold:
+            indices = qs_labels[label]
+            for index in indices:
+                ask = input("Is your question similar to "+ qs[index]+" please answert Y or N")
+                if ask=="Y":
+                    return "the answer to your similar question is: "+ans[index]
+    return "No similar question found. You may add your question to the question board."
