@@ -11,13 +11,13 @@
         session_start();
         file_put_contents("log.html", 'testtttttt');
 
-        if(isset($_GET['logout'])){    
+        // if(isset($_GET['logout'])){    
         
-            session_destroy();
-            header("Location: index.php"); //Redirect the user
-        }
+        //     session_destroy();
+        //     header("Location: index.php"); //Redirect the user
+        // }
         ?>
-        <div class ="main">
+        <div>
 		<input name="sliderval" type="range" min="0" max="100" value="50" id="sliderval">
         </div>
         <!-- <div>
@@ -74,7 +74,7 @@
                 }
 
                 setInterval (loadSlide, 2500);
-			}
+			})
 		</script>
     </body>
 </html>
