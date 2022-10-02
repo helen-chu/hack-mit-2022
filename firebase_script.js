@@ -1,31 +1,68 @@
-// Firebase related code
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA5LPtoF1xMm-ufRxYhRS9PwR_n52Cr5Qc",
-  authDomain: "engauge-hackmit.firebaseapp.com",
-  databaseURL: "https://engauge-hackmit-default-rtdb.firebaseio.com",
-  projectId: "engauge-hackmit",
-  storageBucket: "engauge-hackmit.appspot.com",
-  messagingSenderId: "337114195535",
-  appId: "1:337114195535:web:eca9ac6baf03cbfeb5ac3a",
-  measurementId: "G-CXG5NRDYDL"
+  apiKey: "AIzaSyAD4TNhjn9wNEpAf6UK8hjweYg4h-37_SU",
+  authDomain: "engaugetest-fe044.firebaseapp.com",
+  databaseURL: "https://engaugetest-fe044-default-rtdb.firebaseio.com",
+  projectId: "engaugetest-fe044",
+  storageBucket: "engaugetest-fe044.appspot.com",
+  messagingSenderId: "213988430594",
+  appId: "1:213988430594:web:07521e5fea8f935106681b"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
 
-import { getDatabase, ref, set } from "firebase/database";
+// reference your database
+var contactFormDB = firebase.database().ref("contactForm");
 
-function writeUserData() {
-  firebase.database().ref("User").set({
-    value: document.getElementById("value").value
-  })
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+  // var emailid = getElementVal("emailid");
+  // var msgContent = getElementVal("msgContent");
+  saveMessages(name);
+  // saveMessages(name, emailid, msgContent);
+
+  //   enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  //   remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  //   reset the form
+  document.getElementById("contactForm").reset();
+}
+
+// const saveMessages = (name, emailid, msgContent) => {
+//   var newContactForm = contactFormDB.push();
+
+//   newContactForm.set({
+//     name: name,
+//     emailid: emailid,
+//     msgContent: msgContent,
+//   });
+// };
+const saveMessages = (name) => {
+  var newContactForm = contactFormDB.push();
+
+  newContactForm.set({
+    name: name,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
+
+var slider = document.getElementById("name");
+var output = document.getElementById("bar");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value;
 }
