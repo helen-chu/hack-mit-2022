@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<title></title>
+  <head>
+    <title>This is the title of the webpage!</title>
+	<title></title>
 		<style>
 			* {
 				margin: 0;
@@ -82,29 +83,29 @@
 				left:100%;
 			}
 		</style>
-	</head>
-	<body>
-		<div class ="main">
-			<input type="range" min="0" max="100" value="50" id="slider">
-			<div id="selector">
-				<div class="SelectBtn"></div>
-				<div id="SelectValue"></div>
-			</div>
-			<div id="progressBar"></div>
-			<script>
-				var slider = document.getElementById("slider");
-				var selector = document.getElementById("selector");
-				var SelectValue = document.getElementById("SelectValue");
-				var progressBar = document.getElementById("progressBar");
-
-				SelectValue.innerHTML = slider.value;
-
-				slider.oninput = function(){
-					SelectValue.innerHTML = this.value;
-					selector.style.left = this.value + "%";
-					progressBar.style.width = (-this.value) + "%";
-				}
-			</script>
+  </head>
+  <body>
+    <div class ="main">
+		<input type="range" min="0" max="100" value="50" id="slider">
+		<div id="selector">
+			<div class="SelectBtn"></div>
+			<div id="SelectValue"></div>
 		</div>
-	</body>
+		<div id="progressBar"></div>
+		<script>
+			var slider = document.getElementById("slider");
+			var selector = document.getElementById("selector");
+			var SelectValue = document.getElementById("SelectValue");
+			var progressBar = document.getElementById("progressBar");
+
+			SelectValue.innerHTML = slider.value;
+
+			slider.oninput = function(){
+				SelectValue.innerHTML = this.value;
+				selector.style.left = this.value + "%";
+				progressBar.style.width = (-this.value) + "%";
+			}
+		</script>
+	</div>
+  </body>
 </html>

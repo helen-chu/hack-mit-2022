@@ -9,10 +9,7 @@
     <h3> Current Messages:</h3>
 
     <div id="chatbox"><?php
-<<<<<<< HEAD
-=======
     session_start();
->>>>>>> 6a27b817a94ad41d9a8d4d52015173af0658bd33
         if(file_exists("log.html") && filesize("log.html") > 0){
             
             $contents = file_get_contents("log.html");         
