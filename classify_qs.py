@@ -84,5 +84,10 @@ def find_label(q,trained_labels):
                 #     label_freq[label]=trained_labels[label][word]
     # labels = trained_labels.keys()
     # result = [sorted_label for _, sorted_label in sorted(zip(label_freq, labels))]
-    label_freq_sorted = sorted(label_freq, key=label_freq.get)
+    sorted_keys = reversed(sorted(label_freq, key=label_freq.get))
+    label_freq_sorted = {}
+    for label in sorted_keys:
+        label_freq_sorted[label] = label_freq[label]
     return label_freq_sorted
+
+
