@@ -44,7 +44,8 @@
                 <p>Value:<span id="value"></span></p>
             </div>             
             <div id="Submit">
-                <input type="submit" value="Submit" id="icon">
+                <!-- <input type="submit" value="Submit" id="icon"> -->
+                <button onclick="writeData()">Submit</button>
             </div>
 		<script src="slider.js"></script>
 	</div>
