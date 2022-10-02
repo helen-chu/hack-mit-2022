@@ -158,8 +158,8 @@
                 // jQuery Document
             $(document).ready(function () {
                 $("#sliderval").click(function () {
-                    var slideval = $("#sliderval").val();
-                    $.post("slider.php", { slideval: slideval });
+                    var inputslide = $("#sliderval").val();
+                    $.post("slider.php", { slideval: inputslide });
                     $("#sliderval").val("");
                     return false;
                 });
