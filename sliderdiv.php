@@ -47,9 +47,9 @@
                 // jQuery Document
             $(document).ready(function () {
                 $("#sliderval").click(function () {
-                // SelectValue.innerHTML = slider.value;
+                SelectValue.innerHTML = slider.value;
                     var inputslide = $("#sliderval").val();
-                    $.post("slider.php", { slideval: inputslide });
+                    $.post("slider.php", { slideval: SelectValue });
                     $("#sliderval").val("");
                     return false;
                 });
