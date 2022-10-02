@@ -39,7 +39,7 @@
             $(document).ready(function () {
                 $("#submit").click(function () {
                     var clientmsg = $output.val();
-                    $.post("slider.php", { slideval: clientmsg });
+                    $.post("slider.php", { slideval: output });
                     $("#usermsg").val("");
                     return false;
                 });
