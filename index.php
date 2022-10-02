@@ -37,6 +37,28 @@
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
+        <div class ="main">
+		<input type="range" min="0" max="100" value="50" id="slider">
+		<div id="selector">
+			<div class="SelectBtn"></div>
+			<div id="SelectValue"></div>
+		</div>
+		<div id="progressBar"></div>
+		<script>
+			var slider = document.getElementById("slider");
+			var selector = document.getElementById("selector");
+			var SelectValue = document.getElementById("SelectValue");
+			var progressBar = document.getElementById("progressBar");
+
+			SelectValue.innerHTML = slider.value;
+
+			slider.oninput = function(){
+				SelectValue.innerHTML = this.value;
+				selector.style.left = this.value + "%";
+				progressBar.style.width = (-this.value) + "%";
+			}
+		</script>
+	</div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
