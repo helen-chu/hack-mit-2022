@@ -16,7 +16,7 @@
 			.main{
 				width: 60%;
 				margin:50% auto;
-				position: relative;
+				position: fixed;
 			}
 			#slider{
 				-webkit-appearance:none;
