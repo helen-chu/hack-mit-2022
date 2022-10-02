@@ -18,7 +18,7 @@
             header("Location: index.php"); //Redirect the user
         }
         ?>
-        <div id="wrapper">
+        <div id="wrapper" text-alignment=right;>
             <div id="menu">
                 <p class="welcome">Welcome</b></p>
                 <p class="logout"><a id="exit" href="#">New Class</a></p>
@@ -32,6 +32,8 @@
             }
             ?>
             </div>
+
+
  
             <form name="message" action="">
                 <input name="usermsg" type="text" id="usermsg" />
