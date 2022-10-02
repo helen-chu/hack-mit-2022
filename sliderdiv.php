@@ -41,7 +41,7 @@
             <!-- script to take in status bar input -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
-                var slider = document.getElementById("slider"); 
+                var slider = document.getElementById("sliderval"); 
                 var SelectValue = document.getElementById("SelectValue");
                 SelectValue.innerHTML = slider.value;
 
