@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="login.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <style>
 body {
-  background-image: url('bg.png');
+  background-image: url("login-img/bg.png");
   background-repeat: no-repeat;
 }
        *{
@@ -101,13 +101,13 @@ body {
       border-radius: 20px;
       border: none;
       border-bottom: 4px solid #000056;
-      background: url("button.jpg"); 
+      background: url("login-img/button.jpg"); 
       font-size: 16px;
       font-weight: 900;
       color: #000;
       }
       button:hover {
-      background: url("button的副本.jpeg");
+      background: url("login-img/button的副本.jpeg");
       } 
       @media (min-width: 568px) {
       form {
@@ -118,7 +118,7 @@ body {
 </head>
 <body>
 
-<img src="logowelcome.png" alt="Logo and welcome" width="235" height="247" class="center"> 
+<img src="login-img/logowelcome.png" alt="Logo and welcome" width="235" height="247" class="center"> 
 
 
 <form action="/" class="decor">
@@ -129,8 +129,9 @@ body {
     <div class="form-inner">
       <input type="email" placeholder="Email">
       <input type="text" placeholder="Course Code">
-      <button type="submit" href="/">I am a Instructor.</button>
-      <button type="submit" href="/">I am a Student.</button>
+
+      <button type="submit" href="welcome.php">I am a Instructor.</button>
+      <button type="submit" href="index.php">I am a Student.</button>
     </div>
   </form>
 
