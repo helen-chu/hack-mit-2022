@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>EnGauge</title>
-        <style>
+        <!-- <style>
 			* {
 				margin: 0;
 				padding: 0;
@@ -82,7 +82,7 @@
 				top:0;
 				left:100%;
 			}
-		</style>
+		</style> -->
         <link rel="stylesheet" href="style.css" />
     </head>
     
