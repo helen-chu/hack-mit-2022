@@ -27,12 +27,13 @@ Question: <input type="text" name="name"><br>
 <?php 
 $time = 1.5;
 
-$output=shell_exec("python analytics.py "  .$time);
-echo "happy hackathon!";
-echo "<img src='{$output}'>";
+$output=shell_exec("python analytics.py '2'");
+echo "$output happy hackathon!";
+
 ?>
 
-<!-- <img src="<?php echo $output; ?>"/> -->
+
+<img src='lines.png'/>
 
 
 </body>

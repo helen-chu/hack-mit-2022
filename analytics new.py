@@ -9,8 +9,8 @@ try_data = {
     5:[5,2,1]
 }
 
-# time_next = sys.argv[1]
-# try_data[time_next] = [3,2,3]
+time_next = sys.argv[1]
+try_data[time_next] = [3,2,3]
 
 def plot(data):
     x = data.keys()
@@ -23,9 +23,8 @@ def plot(data):
     plt.savefig("lines.png")
     plt.show()
 
-time_php = sys.argv[1]
-print(time_php)
-
+# result = sys.argv[1]
+print("lines.png")
 
 plot(try_data)
 
