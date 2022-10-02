@@ -14,6 +14,7 @@
         ?>
         <div id="wrapper">
             <div id="chatbox">
+                <p>test</p>
             <?php
             if(file_exists("slide.html") && filesize("slide.html") > 0){
                 $contents = file_get_contents("slide.html");          
