@@ -23,8 +23,8 @@ def plot(data):
     plt.savefig("lines.png")
     plt.show()
 
-result = sys.argv[1]
-print(result+" by python!")
+# result = sys.argv[1]
+print("lines.png")
 
 plot(try_data)
 
