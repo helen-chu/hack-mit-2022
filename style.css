@@ -39,7 +39,10 @@
        
       #wrapper,
       #loginform {
-        margin: 0 auto;
+        margin-left: auto; 
+        margin-right: 100;
+        text-align: right;
+        /* margin: 0 auto; */
         padding-bottom: 25px;
         background: #eee;
         width: 600px;

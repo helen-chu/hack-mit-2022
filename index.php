@@ -10,17 +10,17 @@
     </head>
     
     <body>
-    <?php
-    session_start();
-    file_put_contents("log.html", '');
+        <?php
+        session_start();
+        file_put_contents("log.html", '');
 
-    if(isset($_GET['logout'])){    
-     
-        session_destroy();
-        header("Location: index.php"); //Redirect the user
-    }
-    ?>
-        <div id="wrapper">
+        if(isset($_GET['logout'])){    
+        
+            session_destroy();
+            header("Location: index.php"); //Redirect the user
+        }
+        ?>
+        <div id="wrapper" text-alignment=right;>
             <div id="menu">
                 <p class="welcome">Welcome</b></p>
                 <p class="logout"><a id="exit" href="#">New Class</a></p>
@@ -34,6 +34,8 @@
             }
             ?>
             </div>
+
+
  
             <form name="message" action="">
                 <input name="usermsg" type="text" id="usermsg" />
