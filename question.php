@@ -27,6 +27,8 @@ $txt = "PHP";
 echo "I love $txt!";
 ?>
 
+<img src='lines.png'/>
+
 </body>
 </html>
 
