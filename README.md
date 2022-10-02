@@ -1,2 +1,2 @@
-# hack-mit-2022
-This is our edtech App
+# EnGauge: a HackMIT 2022 Project
+Bringing the best of virtual learning to in person classrooms
